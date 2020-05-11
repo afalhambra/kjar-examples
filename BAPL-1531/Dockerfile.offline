@@ -10,11 +10,17 @@ RUN mkdir -p /usr/share/maven && \
 ENV M2_HOME /usr/share/maven
 ENV MAVEN_CONFIG "/root/.m2"
 
-# copy maven settings and repository
-COPY repository $MAVEN_CONFIG/repository
+# copy maven settings
 COPY utils/settings_offline.xml $MAVEN_CONFIG/settings.xml
 
 # copy application
 COPY kie-spring-service-multi-kjar/target/kie-spring-boot-example.jar /app.jar
+
+# copy repository
+RUN mkdir -p /tmp/repository
+RUN mkdir -p $MAVEN_CONFIG/repository
+RUN unzip /app.jar 'BOOT-INF/classes/repository/*' -d /tmp/repository
+RUN mv /tmp/repository/BOOT-INF/classes/repository/* $MAVEN_CONFIG/repository/
+
 # specify default command
 CMD ["/usr/bin/java", "-Dkie.maven.settings.custom=/root/.m2/settings.xml", "-jar", "/app.jar"]

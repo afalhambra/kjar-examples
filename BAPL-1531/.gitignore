@@ -5,3 +5,9 @@ target
 settings.xml
 BOOT-INF
 repository
+/.idea/
+/kie-spring-service-multi-kjar/kie-server-spring-boot-multi-sample.iml
+/kjar-with-parent/kjar-with-parent.iml
+/kjar-without-parent/kjar-without-parent.iml
+/offliner-maven-plugin/offliner-maven-plugin.iml
+/offliner-maven-plugin/offliner-maven-plugin.iml

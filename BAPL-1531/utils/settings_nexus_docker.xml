@@ -22,7 +22,7 @@
         </repository>
         <repository>
           <id>nexus-docker</id>
-          <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+          <url>http://localhost:8081/repository/maven-snapshots</url>
           <layout>default</layout>
           <snapshots>
             <enabled>true</enabled>

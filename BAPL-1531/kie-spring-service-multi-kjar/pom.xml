@@ -119,7 +119,6 @@
                   <artifacts>
                     <gav>com.sgitario.kjar-examples:${kjar.artifactId}:${kjar.version}</gav>
                   </artifacts>
-                  <outputDirectory>repository</outputDirectory>
                 </configuration>
               </execution>
             </executions>
@@ -131,7 +130,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.sgitario.kjar-examples</groupId>
+      <groupId>com.example</groupId>
       <artifactId>query-ext</artifactId>
     </dependency>
 
